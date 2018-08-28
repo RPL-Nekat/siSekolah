@@ -8,7 +8,8 @@
 	<title>siSekolah</title>
 	
 	{!! Html::style('css/app.css') !!}		
-	{!! Html::style('css/FontAwesome/all.min.css') !!}
+	{{-- {!! Html::style('css/FontAwesome/all.min.css') !!} --}}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">	
 
 	<style type="text/css">
@@ -16,46 +17,101 @@
 			margin: 0;
 			overflow-x: hidden;
 		}
-		.slide .container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+		.slide {			
+			display: flex;					
+			text-align: center;
 			height: 100vh;
-			color: #fff;
-			text-align: center;			
+			color: #fff;	
 		}
 		.intro {
-			background-color: #305a5b;			
+			align-items: flex-end;	
 		}
 		.parallax {
 			background: url(img/bg/pexels-photo-710743.jpeg) 50% 0;
 		}
 		.slidein {
-			background-color: #5b3030;
+			/*background-color: #5b3030;*/
+			align-items: center;
 		}
 		.slidein2 {
 			background-color: #304b5b;
+			align-items: center;
 		}
 		.slidein2 .container {
 			justify-content: space-around;
+		}		
+		#slogan {
+			position: relative;
+			top: -100px;
+		}
+		.bgfly {
+			background-color: rgba(0.2, 0.4, 0.6, 0.6);
+		}
+		.ikon {
+			background-color: #eee;
+			color: #2196F3;
+			padding: 30px;
 		}
 	</style>
 </head>
 <body>
 	<main>
-		<div id="parallax" class="parallax slide">
-			<div class="container">
-				<div  style="background-color: rgba(0.3, 0.5, 0.2, 0.3); padding: 50px;">
-					<img src="img/logo/SMKN 1 Katapang.png" alt="">
-					<h1>Parallax Background</h1>
-					<button href="" class="btn btn-success">Selengkapnya</button>
-				</div>				
+		<div id="parallax" class="parallax slide intro">
+			<div class="container-fluid">
+				<div id="slogan" class="p-4">
+					<h1 style="font-size: 8em;"><strong>SMK Bisa! <i class="far fa-thumbs-up"></i></strong></h1>
+				</div>
+				<div class="row mb-4">
+					<div id="box-logo" class="col-md-5 px-3 py-2" style="background-color: rgba(0.2, 0.4, 0.6, 0.6); border-right: 10px solid #fff">
+						<div class="media text-justify mt-3">
+							<img src="img/logo/SMKN 1 Katapang.png" alt="" class="mr-3" style="width: 94px; height: 94px;">
+							<div class="media-body">
+								<h2><strong>SMKN 1 Katapang</strong></h2>
+								<p class="lead"><small>Pusat penyiapan generasi yang unggul, berkarakter kebangsaan, kompetitif dan adaptable.</small></p>
+							</div>
+						</div>
+					</div>					
+				</div>
 			</div>
 		</div>
 
-		<div id="slidein" class="slidein slide">
-			<div class="container">
-				<h1>Slide and Pin</h1>
+		<div id="slidein" class="slidein slide" style="color: #333;">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col" style="background-color: #2196F3; height: 100vh; color: #fff;">
+						<div class="ket my-4 p-4">
+							<i class="fas fa-code display-3 my-4 rounded-circle ikon"></i>				
+							<h3>Test</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias molestiae consectetur cum iste hic voluptas reiciendis natus, iure perspiciatis obcaecati.</p>
+							<button class="btn btn-success">Selengkapnya</button>
+
+						</div>
+					</div>
+					<div class="col">
+						<div class="ket my-4 p-4">
+							<i class="fas fa-code display-3 my-4 rounded-circle ikon"></i>				
+							<h3>Test</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias molestiae consectetur cum iste hic voluptas reiciendis natus, iure perspiciatis obcaecati.</p>
+							<button class="btn btn-success">Selengkapnya</button>
+						</div>
+					</div>
+					<div class="col">
+						<div class="ket my-4 p-4">
+							<i class="fas fa-code display-3 my-4 rounded-circle ikon"></i>				
+							<h3>Test</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias molestiae consectetur cum iste hic voluptas reiciendis natus, iure perspiciatis obcaecati.</p>
+							<button class="btn btn-success">Selengkapnya</button>
+						</div>
+					</div>
+					<div class="col">
+						<div class="ket my-4 p-4">
+							<i class="fas fa-code display-3 my-4 rounded-circle ikon"></i>				
+							<h3>Test</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias molestiae consectetur cum iste hic voluptas reiciendis natus, iure perspiciatis obcaecati.</p>
+							<button class="btn btn-success">Selengkapnya</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -112,6 +168,49 @@
 
 
 		//other animation
+		
+
+		//SMK
+		var fromRightTimeline = new TimelineMax();
+		var fromRightFrom = TweenMax.from("#box-logo", 1, {
+			x: 0
+		});
+		var fromRightTo = TweenMax.to("#box-logo", 1, {
+			x: -500
+		});
+		fromRightTimeline
+			.add(fromRightFrom)
+			.add(fromRightTo);
+		new ScrollMagic.Scene({
+			triggerElement: "#parallax",
+			offset: 200
+		})
+		.setTween(fromRightTimeline)
+		.duration(1000)
+		.addTo(controller);
+
+
+		//Slogan
+		var fadeInSlo = new TimelineMax();
+		var fadeInSloFrom = TweenMax.from("#slogan", 1, {
+			autoAlpha: 1
+		});
+		var fadeInSloTo = TweenMax.to("#slogan", 1, {
+			autoAlpha: 0
+		});
+		fadeInSlo
+			.add(fadeInSloFrom)
+			.add(fadeInSloTo);
+
+		new ScrollMagic.Scene({
+			triggerElement: "#parallax",
+			offset: 200
+		})
+		.setTween(fadeInSlo)
+		.duration(400)
+		.addTo(controller);
+
+		//section3
 		var fromLeftTimeline = new TimelineMax();
 		var fromLeftFrom = TweenMax.from("#left", 1, {
 			x: -500
